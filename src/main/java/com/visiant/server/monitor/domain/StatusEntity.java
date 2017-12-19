@@ -2,10 +2,17 @@ package com.visiant.server.monitor.domain;
 
 public class StatusEntity {
     private String serverName;
-    private boolean alive;
-    private boolean authnTokenAvailable;
-    private boolean oAuthTokenAvailable;
-    private boolean samlTokenAvailable;
+    private State alive;
+    private State authnTokenAvailable;
+    private State oAuthTokenAvailable;
+    private State samlTokenAvailable;
+
+    public StatusEntity() {
+        this.alive=State.NOTAVAILABLE;
+        this.authnTokenAvailable=State.NOTAVAILABLE;
+        this.oAuthTokenAvailable=State.NOTAVAILABLE;
+        this.samlTokenAvailable=State.NOTAVAILABLE;
+    }
 
     public String getServerName() {
         return serverName;
@@ -15,35 +22,35 @@ public class StatusEntity {
         this.serverName = serverName;
     }
 
-    public boolean isAlive() {
+    public State getAlive() {
         return alive;
     }
 
-    public void setAlive(boolean alive) {
+    public void setAlive(State alive) {
         this.alive = alive;
     }
 
-    public boolean isAuthnTokenAvailable() {
+    public State getAuthnTokenAvailable() {
         return authnTokenAvailable;
     }
 
-    public void setAuthnTokenAvailable(boolean authnTokenAvailable) {
+    public void setAuthnTokenAvailable(State authnTokenAvailable) {
         this.authnTokenAvailable = authnTokenAvailable;
     }
 
-    public boolean isoAuthTokenAvailable() {
+    public State getoAuthTokenAvailable() {
         return oAuthTokenAvailable;
     }
 
-    public void setoAuthTokenAvailable(boolean oAuthTokenAvailable) {
+    public void setoAuthTokenAvailable(State oAuthTokenAvailable) {
         this.oAuthTokenAvailable = oAuthTokenAvailable;
     }
 
-    public boolean isSamlTokenAvailable() {
+    public State getSamlTokenAvailable() {
         return samlTokenAvailable;
     }
 
-    public void setSamlTokenAvailable(boolean samlTokenAvailable) {
+    public void setSamlTokenAvailable(State samlTokenAvailable) {
         this.samlTokenAvailable = samlTokenAvailable;
     }
 
