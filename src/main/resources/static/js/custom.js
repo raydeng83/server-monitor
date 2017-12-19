@@ -3,7 +3,7 @@ $( document ).ready(function() {
 		var tr = $("#dev_servers");
 
 		$.ajax({
-			url: 'http://localhost:4000/SunGuard/am1',
+			url: 'http://localhost:8080/monitor/SunGuard/am1',
 			type: 'GET',
 			success: function(data, status){ 
 				if(data.alive=='RUNNING') {
@@ -25,7 +25,7 @@ $( document ).ready(function() {
 		});
 
 		$.ajax({
-			url: 'http://localhost:4000/SunGuard/am2',
+			url: 'http://localhost:8080/monitor/SunGuard/am2',
 			type: 'GET',
 			success: function(data, status){ 
 				if(data.alive=='RUNNING') {
@@ -48,7 +48,7 @@ $( document ).ready(function() {
 		});
 
 		$.ajax({
-			url: 'http://localhost:4000/SunGuard/amLoadBalancer',
+			url: 'http://localhost:8080/monitor/SunGuard/amLoadBalancer',
 			type: 'GET',
 			success: function(data, status){ 
 				if(data.alive=='RUNNING') {
@@ -64,7 +64,7 @@ $( document ).ready(function() {
 
 
 		$.ajax({
-			url: 'http://localhost:4000/SunGuard/idm1',
+			url: 'http://localhost:8080/monitor/SunGuard/idm1',
 			type: 'GET',
 			success: function(data, status){ 
 				if(data.alive=='RUNNING') {
@@ -79,7 +79,7 @@ $( document ).ready(function() {
 		});
 
 		$.ajax({
-			url: 'http://localhost:4000/SunGuard/idm2',
+			url: 'http://localhost:8080/monitor/SunGuard/idm2',
 			type: 'GET',
 			success: function(data, status){ 
 				if(data.alive=='RUNNING') {
