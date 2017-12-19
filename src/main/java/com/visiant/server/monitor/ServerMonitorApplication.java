@@ -6,12 +6,12 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class ServerMonitorApplication extends SpringBootServletInitializer {
-
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(ServerMonitorApplication.class);
-	}
+public class ServerMonitorApplication  {
+//
+//	@Override
+//	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+//		return application.sources(ServerMonitorApplication.class);
+//	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(ServerMonitorApplication.class, args);

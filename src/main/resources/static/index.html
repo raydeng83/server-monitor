@@ -18,47 +18,13 @@
 
 <body>
 
-  <!--<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">-->
-    <!--<a class="navbar-brand" href="#">Navbar</a>-->
-    <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">-->
-      <!--<span class="navbar-toggler-icon"></span>-->
-    <!--</button>-->
-
-    <!--<div class="collapse navbar-collapse" id="navbarsExampleDefault">-->
-      <!--<ul class="navbar-nav mr-auto">-->
-        <!--<li class="nav-item active">-->
-          <!--<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
-        <!--</li>-->
-        <!--<li class="nav-item">-->
-          <!--<a class="nav-link" href="#">Link</a>-->
-        <!--</li>-->
-        <!--<li class="nav-item">-->
-          <!--<a class="nav-link disabled" href="#">Disabled</a>-->
-        <!--</li>-->
-        <!--<li class="nav-item dropdown">-->
-          <!--<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>-->
-          <!--<div class="dropdown-menu" aria-labelledby="dropdown01">-->
-            <!--<a class="dropdown-item" href="#">Action</a>-->
-            <!--<a class="dropdown-item" href="#">Another action</a>-->
-            <!--<a class="dropdown-item" href="#">Something else here</a>-->
-          <!--</div>-->
-        <!--</li>-->
-      <!--</ul>-->
-      <!--<form class="form-inline my-2 my-lg-0">-->
-        <!--<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">-->
-        <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-      <!--</form>-->
-    <!--</div>-->
-  <!--</nav>-->
-
     <div class="starter-template">
       <h1>Server Status List</h1>
       <br/><br/>
 
 
-      <h3>Sun Guard Server</h3>
-
-      <table class="table table-hover" id="dev_servers">
+      <h3>Sun Guard Servers</h3>
+      <table class="table table-hover" id="sg_servers">
         <thead>
           <tr>
             <th scope="col">IAM Products</th>
@@ -73,29 +39,19 @@
         </thead>
         <tbody>
           <tr>
-            <td>OpenAM</td>
-            <td>VCSIQWOAM01.visiantcloud.com:8443</td>
-            <td id="dev1_am_status">N/A</td>
+            <td>OpenAM Servers</td>
+            <td>MDWIAMPHX03.ikasystems.com:8080</td>
+            <td id="sg_am1_http_status">N/A</td>
             <td>N/A</td>
-            <td id="dev1_oauth_status">N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-          </tr>
-          <tr>
-            <td>OpenAM</td>
-            <td>VCSIQWOAM02.visiantcloud.com:8443</td>
-            <td id="dev2_am_status">N/A</td>
-            <td>N/A</td>
-            <td id="dev2_oauth_status">N/A</td>
+            <td id="sg_am1_http_oauth_status">N/A</td>
             <td>N/A</td>
             <td>N/A</td>
             <td>N/A</td>
           </tr>
           <tr>
-            <td>OpenAM_LoadBalancer</td>
-            <td>iamnp.visiantcloud.com</td>
-            <td id="loadbalancer_am_status">N/A</td>
+            <td>OpenAM Servers</td>
+            <td>MDWIAMPHX03.ikasystems.com:8443</td>
+            <td id="sg_am1_https_status">N/A</td>
             <td>N/A</td>
             <td>N/A</td>
             <td>N/A</td>
@@ -103,9 +59,9 @@
             <td>N/A</td>
           </tr>
           <tr>
-            <td>OpenIDM</td>
-            <td>VCSIQWOIDM01.visiantcloud.com:18443</td>
-            <td id="dev1_idm_status">N/A</td>
+            <td>OpenAM Servers</td>
+            <td>MDWIAMPHX04.ikasystems.com:8080</td>
+            <td id="sg_am2_http_status">N/A</td>
             <td>N/A</td>
             <td>N/A</td>
             <td>N/A</td>
@@ -113,15 +69,202 @@
             <td>N/A</td>
           </tr>
           <tr>
-            <td>OpenIDM</td>
-            <td>VCSIQWOIDM02.visiantcloud.com:18443</td>
-            <td id="dev2_idm_status">N/A</td>
+            <td>OpenAM Servers</td>
+            <td>MDWIAMPHX04.ikasystems.com:8443</td>
+            <td id="sg_am2_https_status">N/A</td>
             <td>N/A</td>
             <td>N/A</td>
             <td>N/A</td>
             <td>N/A</td>
             <td>N/A</td>
           </tr>
+          <tr>
+            <td>Load Balance OpenAM Servers</td>
+            <td>https://openam.ikadev.com/visiantauth</td>
+            <td id="sg_lb_status">N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <h3>Non-Prod Servers</h3>
+      <table class="table table-hover" id="non_prod_servers">
+        <thead>
+        <tr>
+          <th scope="col">IAM Products</th>
+          <th scope="col">Server URL</th>
+          <th scope="col">Health Status</th>
+          <th scope="col">IAM Functionality Status</th>
+          <th scope="col">OAuth Token in ALL IAM</th>
+          <th scope="col">SAML Token in ALL IAM</th>
+          <th scope="col">Application Connectivity</th>
+          <th scope="col">Load Balancer Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>OpenAM Servers</td>
+          <td>VCSIQWOAM01.visiantcloud.com:8080</td>
+          <td id="non_prod_am1_http_status">N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>OpenAM Servers</td>
+          <td>VCSIQWOAM01.visiantcloud.com:8443</td>
+          <td id="non_prod_am1_https_status">N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>OpenAM Servers</td>
+          <td>VCSIQWOAM02.visiantcloud.com:8080</td>
+          <td id="non_prod_am2_http_status">N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>OpenAM Servers</td>
+          <td>VCSIQWOAM02.visiantcloud.com:8443</td>
+          <td id="non_prod_am2_https_status">N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>Load Balance OpenAM Servers</td>
+          <td>https://iamnp.visiantcloud.com/vauth</td>
+          <td id="non_prod_lb_status">N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h3>Prod Servers</h3>
+      <table class="table table-hover" id="prod_servers">
+        <thead>
+        <tr>
+          <th scope="col">IAM Products</th>
+          <th scope="col">Server URL</th>
+          <th scope="col">Health Status</th>
+          <th scope="col">IAM Functionality Status</th>
+          <th scope="col">OAuth Token in ALL IAM</th>
+          <th scope="col">SAML Token in ALL IAM</th>
+          <th scope="col">Application Connectivity</th>
+          <th scope="col">Load Balancer Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>OpenAM Servers</td>
+          <td>VCSIPWOAM01.visiantcloud.com:8080</td>
+          <td id="prod_am1_http_status">N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>OpenAM Servers</td>
+          <td>VCSIPWOAM01.visiantcloud.com :8443</td>
+          <td id="prod_am1_https_status">N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>OpenAM Servers</td>
+          <td>VCSIPWOAM02.visiantcloud.com:8080</td>
+          <td id="prod_am2_http_status">N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>OpenAM Servers</td>
+          <td>VCSIPWOAM02.visiantcloud.com :8443</td>
+          <td id="prod_am2_https_status">N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>OpenAM Servers</td>
+          <td>VCSIPWOAM03.visiantcloud.com:8080</td>
+          <td id="prod_am3_http_status">N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>OpenAM Servers</td>
+          <td>VCSIPWOAM03.visiantcloud.com :8443</td>
+          <td id="prod_am3_https_status">N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>OpenAM Servers</td>
+          <td>VCSIPWOAM04.visiantcloud.com:8080</td>
+          <td id="prod_am4_http_status">N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>OpenAM Servers</td>
+          <td>VCSIPWOAM04.visiantcloud.com :8443</td>
+          <td id="prod_am4_https_status">N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>Load Balance OpenAM Servers</td>
+          <td>https://iam.visiantcloud.com/vauth</td>
+          <td id="prod_lb_status">N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
         </tbody>
       </table>
     </div>
